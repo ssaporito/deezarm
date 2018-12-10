@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>CustomizeGameHere</name>
+    <events>
+        <comment>TO CUSTOMIZE THE GAME:</comment>
+        <comment>  1.  Set the title of the game that appears on the StartScreen</comment>
+        <variable constant="0" name="GameTitle" sid="102304065208157" static="0" type="text">Deezarm</variable>
+        <comment></comment>
+        <comment>  2. Enter short description of game to appear on StartScreen</comment>
+        <variable constant="0" name="GameDescription" sid="255991844116195" static="0" type="text">Defuse the bomb!</variable>
+        <comment></comment>
+        <comment>  3.  Enter direction text to appear at bottom of SoundBoard game screen.</comment>
+        <variable constant="0" name="GameDirections" sid="959437568539990" static="0" type="text">Hover wires with mouse to hear their sounds.</variable>
+        <comment></comment>
+        <comment>  4. Change the background color or image by editing the Image property of the TiledBackground object.</comment>
+        <comment></comment>
+        <comment>  5.  Edit the Image sprite&apos;s Animations property to include as many images as you&apos;d like to display.  The images will be paged automatically according to the number of Image instances (default 6) on the SoundBoard layout.  A size of 250 x 250 pixels works best given the default layout of two rows and three columns.</comment>
+        <comment></comment>
+        <comment>  6. Import your sounds corresponding to the images by right-clicking the Sounds folder in the Projects view, selecting Import Sounds, and choosing one or more WAV files from your local machine.</comment>
+        <comment></comment>
+        <comment>  7. Edit the SoundFileList string below to include the names of the sound files now in your project&apos;s Sounds directory (minus the file extension). Each sound name should be separated from the next by a pipe (|) character, and the sounds must be in the same order as the corresponding image frames in the Image sprite&apos;s Animations property</comment>
+        <variable comment="sound names (minus file extension)" constant="0" name="SoundFileList" sid="756887484046250" static="0" type="text">metal1|metal2|copper1|cut1|win1</variable>
+        <comment></comment>
+        <comment>  8.  (optional) Set color for navigation icons (&quot;light&quot; or &quot;dark&quot;)</comment>
+        <variable comment="use light or dark theme for navigation icons" constant="0" name="NavigationIconColor" sid="624150612541066" static="0" type="text">dark</variable>
+        <comment></comment>
+        <comment>  9. (optional) Set value below to 1 to provide way to navigate back to StartScreen (you may even decide that StartScreen is unnecessary for this game).</comment>
+        <variable comment="hide/show icon to navigate back to opening screen" constant="0" name="ShowHomeButton" sid="893939455367142" static="0" type="number">1</variable>
+    </events>
+</c2eventsheet>

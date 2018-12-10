@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>StartScreenEvents</name>
+    <events>
+        <comment>Set game title and description from globals set in the CustomizeGameHere event sheet</comment>
+        <event-block sid="388018840370741">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="785187247639785" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="462346813460114" type="GameTitleText">
+                    <param id="0" name="Text">GameTitle</param>
+                </action>
+                <action id="0" name="Set text" sid="433356365125091" type="GameDescriptionText">
+                    <param id="0" name="Text">GameDescription</param>
+                </action>
+                <action id="1" name="Append text" sid="617570586270103" type="SnappedText">
+                    <param id="0" name="Text">&quot; &quot; &amp; GameTitle &amp; &quot;.&quot;</param>
+                </action>
+                <action id="5" name="Set frame" sid="149168919602600" type="StartIcon">
+                    <param id="0" name="Frame number">NavigationIconColor = &quot;light&quot; ? 0 : 1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="607889231314023" title="UnsnappedMode">
+            <sub-events>
+                <comment>When the StartIcon is touched or clicked, go to the main screen.</comment>
+                <event-block any="1" sid="526665325839358">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="378515238007246" type="Touch">
+                            <param id="0" name="Object">StartIcon</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="952385950613480" type="System">
+                            <param id="0" name="Layout">SoundBoard</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="928450317944705">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="198195290277925" type="Mouse">
+                    <param id="0" name="Object">TiledBackground</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="534011539402756" type="Mouse">
+                    <param id="0" name="Cursor style">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="888950278313506">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="218335070182043" type="Mouse">
+                    <param id="0" name="Object">StartIcon</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="387985546677950" type="Mouse">
+                    <param id="0" name="Cursor style">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
