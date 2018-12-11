@@ -21,6 +21,7 @@
                 <action id="5" name="Set frame" sid="149168919602600" type="StartIcon">
                     <param id="0" name="Frame number">NavigationIconColor = &quot;light&quot; ? 0 : 1</param>
                 </action>
+                <action id="-21" name="Reset global variables" sid="281309106300848" type="System" />
             </actions>
         </event-block>
         <event-group description="" sid="607889231314023" title="UnsnappedMode">
@@ -34,7 +35,7 @@
                     </conditions>
                     <actions>
                         <action id="-2" name="Go to layout" sid="952385950613480" type="System">
-                            <param id="0" name="Layout">SoundBoard</param>
+                            <param id="0" name="Layout">Level1</param>
                         </action>
                     </actions>
                 </event-block>

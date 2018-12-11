@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level2Events</name>
+    <events>
+        <include>SoundBoardEvents</include>
+        <event-block sid="782854933577151">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="549147386716207" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="493401743095758" type="System">
+                    <param id="0" name="Variable">BeepFrequency</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-9" name="Set value" sid="688138432655272" type="System">
+                    <param id="0" name="Variable">BeepFrequencyDec</param>
+                    <param id="1" name="Value">0.3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="571302188314914">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="683927513268065" type="System">
+                    <param id="0" name="Variable">GameWon</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="507596469515752">
+                    <conditions>
+                        <condition id="0" name="On click" sid="910005538313295" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="571527439954014" type="System" />
+                        <action id="-26" name="Restart layout" sid="470856732837946" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -40,7 +40,7 @@
                         <x>0</x>
                         <y>0</y>
                         <z>0</z>
-                        <width>1380</width>
+                        <width>1367</width>
                         <height>768</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -74,7 +74,7 @@
                         <initial-visibility>Visible</initial-visibility>
                         <font>Segoe UI Light,-96,300,0</font>
                         <color>30,30,30</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
+                        <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>

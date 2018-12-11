@@ -20,7 +20,7 @@
         <comment>  6. Import your sounds corresponding to the images by right-clicking the Sounds folder in the Projects view, selecting Import Sounds, and choosing one or more WAV files from your local machine.</comment>
         <comment></comment>
         <comment>  7. Edit the SoundFileList string below to include the names of the sound files now in your project&apos;s Sounds directory (minus the file extension). Each sound name should be separated from the next by a pipe (|) character, and the sounds must be in the same order as the corresponding image frames in the Image sprite&apos;s Animations property</comment>
-        <variable comment="sound names (minus file extension)" constant="0" name="SoundFileList" sid="756887484046250" static="0" type="text">metal1|metal2|copper1|cut1|win1</variable>
+        <variable comment="sound names (minus file extension)" constant="0" name="SoundFileList" sid="756887484046250" static="0" type="text">metal1|metal2|copper1|electric1|win1|cut1</variable>
         <comment></comment>
         <comment>  8.  (optional) Set color for navigation icons (&quot;light&quot; or &quot;dark&quot;)</comment>
         <variable comment="use light or dark theme for navigation icons" constant="0" name="NavigationIconColor" sid="624150612541066" static="0" type="text">dark</variable>

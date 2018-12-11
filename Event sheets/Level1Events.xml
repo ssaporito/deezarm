@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level1Events</name>
+    <events>
+        <include>SoundBoardEvents</include>
+        <event-block sid="295772175121898">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="685314813311985" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="941457597819545" type="System">
+                    <param id="0" name="Variable">BeepFrequency</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-9" name="Set value" sid="666570859757525" type="System">
+                    <param id="0" name="Variable">BeepFrequencyDec</param>
+                    <param id="1" name="Value">0.2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="936857014799747">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="751045446347146" type="System">
+                    <param id="0" name="Variable">GameWon</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="364879329570432">
+                    <conditions>
+                        <condition id="0" name="On click" sid="491065376275556" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="261646197819408" type="System" />
+                        <action id="-43" name="Go to next/previous layout" sid="354633501186215" type="System">
+                            <param id="0" name="Which">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

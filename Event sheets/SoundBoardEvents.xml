@@ -3,8 +3,12 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>SoundBoardEvents</name>
     <events>
-        <variable constant="0" name="BeepFrequency" sid="241450624761258" static="0" type="number">2</variable>
-        <variable constant="1" name="BEEPFREQUENCYDEC" sid="770722491893263" static="0" type="number">0.2</variable>
+        <variable constant="0" name="BeepFrequency" sid="241450624761258" static="0" type="number">1</variable>
+        <variable constant="0" name="BeepFrequencyDec" sid="770722491893263" static="0" type="number">0.2</variable>
+        <variable constant="0" name="GameWon" sid="395474065560469" static="0" type="number">0</variable>
+        <variable constant="0" name="GameOver" sid="376310744658690" static="0" type="number">0</variable>
+        <variable constant="0" name="SnappedWires" sid="908645954865175" static="0" type="number">0</variable>
+        <variable constant="0" name="SnappableWires" sid="914403058616904" static="0" type="number">0</variable>
         <variable comment="current page number (zero-based)" constant="0" name="PageNumber" sid="188747974456220" static="0" type="number">0</variable>
         <include>CustomizeGameHere</include>
         <comment>Initialize layout</comment>
@@ -22,18 +26,8 @@
                 <action id="1" name="Append text" sid="513082127597000" type="SnappedText">
                     <param id="0" name="Text">&quot; &quot; &amp; GameTitle &amp; &quot;.&quot;</param>
                 </action>
-                <action id="5" name="Set frame" sid="764171108240480" type="PreviousIcon">
-                    <param id="0" name="Frame number">NavigationIconColor = &quot;light&quot; ? 0 : 1</param>
-                </action>
-                <action id="5" name="Set frame" sid="785677835223168" type="NextIcon">
-                    <param id="0" name="Frame number">NavigationIconColor = &quot;light&quot; ? 0 : 1</param>
-                </action>
                 <action id="5" name="Set frame" sid="569251998272788" type="HomeIcon">
                     <param id="0" name="Frame number">NavigationIconColor = &quot;light&quot; ? 0 : 1</param>
-                </action>
-                <action id="0" name="Call function" sid="375864664057606" type="Function">
-                    <param id="0" name="Name">&quot;AdjustUIVisibility&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>
             <sub-events>
@@ -62,274 +56,359 @@
                         </action>
                     </actions>
                 </event-block>
-            </sub-events>
-        </event-block>
-        <event-group description="" sid="152840424736887" title="UnsnappedMode">
-            <sub-events>
-                <comment>If an image is touched, stop whatever sound is playing and start the sound corresponding to the image</comment>
-                <event-block sid="327848603217754">
+                <event-block sid="913661720991535">
                     <conditions>
-                        <condition id="7" name="Cursor is over object" sid="543991411670804" type="Mouse">
-                            <param id="0" name="Object">Image</param>
-                        </condition>
-                        <condition id="-9" name="Is visible" sid="592685473116044" type="Image" />
-                        <condition id="-6" name="Every X seconds" sid="461103664827927" type="System">
-                            <param id="0" name="Interval (seconds)">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="6" name="Stop" sid="373184409030377" type="Audio">
-                            <param id="0" name="Tag">&quot;&quot;</param>
-                        </action>
-                        <action id="7" name="Play (by name)" sid="341599796839546" type="Audio">
-                            <param id="0" name="Folder">0</param>
-                            <param id="1" name="Audio file name">TokenAt(SoundFileList, Image.Position + (PageNumber * Image.Count), &quot;|&quot;)</param>
-                            <param id="3" name="Loop">0</param>
-                            <param id="4" name="Volume">0</param>
-                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>Page back</comment>
-                <event-block disabled="1" sid="935299289381625">
-                    <conditions>
-                        <condition id="3" name="On touched object" sid="394399169236317" type="Touch">
-                            <param id="0" name="Object">PreviousIcon</param>
-                        </condition>
-                        <condition id="-9" name="Is visible" sid="171457531038924" type="PreviousIcon" />
-                    </conditions>
-                    <actions>
-                        <action id="-11" name="Subtract from" sid="380655509832258" type="System">
-                            <param id="0" name="Variable">PageNumber</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="5" name="Set frame" sid="872501684899445" type="Image">
-                            <param id="0" name="Frame number">Self.position + (PageNumber * Image.Count)</param>
-                        </action>
-                        <action id="0" name="Call function" sid="336659716905852" type="Function">
-                            <param id="0" name="Name">&quot;AdjustUIVisibility&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>Page up</comment>
-                <event-block disabled="1" sid="811094456258203">
-                    <conditions>
-                        <condition id="3" name="On touched object" sid="518591125971259" type="Touch">
-                            <param id="0" name="Object">NextIcon</param>
-                        </condition>
-                        <condition id="-9" name="Is visible" sid="585738133115500" type="NextIcon" />
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Add to" sid="289551145793701" type="System">
-                            <param id="0" name="Variable">PageNumber</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="5" name="Set frame" sid="283060999991438" type="Image">
-                            <param id="0" name="Frame number">Self.position + (PageNumber * Image.Count)</param>
-                        </action>
-                        <action id="0" name="Call function" sid="390250166918435" type="Function">
-                            <param id="0" name="Name">&quot;AdjustUIVisibility&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>Go back to StartScreen</comment>
-                <event-block sid="627149036856593">
-                    <conditions>
-                        <condition id="3" name="On touched object" sid="271208553303638" type="Touch">
-                            <param id="0" name="Object">HomeIcon</param>
-                        </condition>
-                        <condition id="-9" name="Is visible" sid="838406758425821" type="HomeIcon" />
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="147768993192230" type="System">
-                            <param id="0" name="Variable">PageNumber</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-2" name="Go to layout" sid="882313000566811" type="System">
-                            <param id="0" name="Layout">StartScreen</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <comment>After pagination, some of the UI elements may need to be hidden/shown to reflect state of current page</comment>
-        <event-block sid="579404581825855">
-            <conditions>
-                <condition id="0" name="On function" sid="192153784211480" type="Function">
-                    <param id="0" name="Name">&quot;AdjustUIVisibility&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="533526402756995" type="PaginationText">
-                    <param id="0" name="Text">&quot;Page: &quot; &amp; (PageNumber + 1) &amp; &quot; of &quot; &amp;  ceil(Image.AnimationFrameCount / Image.Count)</param>
-                </action>
-            </actions>
-            <sub-events>
-                <comment>If number of images (AnimationFrameCount) isn&apos;t evenly divisible by number of image instances on the board, some of the image instances on the last screen may require hiding</comment>
-                <event-block sid="271400509413607">
-                    <conditions>
-                        <condition id="-11" name="For Each" sid="300606109951511" type="System">
-                            <param id="0" name="Object">Image</param>
+                        <condition id="-11" name="For Each" sid="755134631317638" type="System">
+                            <param id="0" name="Object">Wires</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="693324708109562">
+                        <event-block sid="114179598355831">
                             <conditions>
-                                <condition id="-8" name="Compare two values" sid="854436284165430" type="System">
-                                    <param id="0" name="First value">Image.Position + (Image.Count * PageNumber + 1)</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Second value">Image.AnimationFrameCount</param>
+                                <condition id="-8" name="Is boolean instance variable set" sid="711721933170186" type="Wires">
+                                    <param id="0" name="Instance variable">snappable</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-15" name="Set visible" sid="134258281528491" type="Image">
-                                    <param id="0" name="Visibility">0</param>
+                                <action id="-10" name="Add to" sid="132178219417019" type="System">
+                                    <param id="0" name="Variable">SnappableWires</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="368518544640832">
+                        <event-block sid="247663055882523">
                             <conditions>
-                                <condition id="-22" name="Else" sid="207647138943479" type="System" />
+                                <condition id="-8" name="Is boolean instance variable set" sid="444457434221001" type="Wires">
+                                    <param id="0" name="Instance variable">isOrigin</param>
+                                </condition>
                             </conditions>
                             <actions>
-                                <action id="-15" name="Set visible" sid="732454532743246" type="Image">
-                                    <param id="0" name="Visibility">1</param>
+                                <action id="-8" name="Scroll to object" sid="436919849070163" type="System">
+                                    <param id="0" name="Object">Wires</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>Show/hide the previous button appropriately</comment>
-                <event-block sid="302187525404479">
+            </sub-events>
+        </event-block>
+        <comment>Game state</comment>
+        <event-block sid="988735611135324">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="313464158899493" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="770704697697394">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="425899168219010" type="System">
+                        <condition id="0" name="On click" sid="768820319376056" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="119198910303046" type="GameOverText" />
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="226582711777962" type="System" />
+                        <action id="-26" name="Restart layout" sid="696760743858962" type="System" />
+                        <action id="-45" name="Reset persisted objects" sid="309288389002403" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="876998993028801">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="335132700342076" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="132509626337329" type="Wires">
+                            <param id="0" name="Opacity">3</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="890185047998843" type="SnappedWire">
+                            <param id="0" name="Opacity">3</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="945524867268924" type="System">
+                            <param id="0" name="Seconds">0.3</param>
+                        </action>
+                        <action id="0" name="Play" sid="359174278036753" type="Audio">
+                            <param id="0" name="Audio file">bomb-explode</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="764175242106643" type="GameOverText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="897353066908653">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="838938407763102" type="System">
+                    <param id="0" name="Variable">GameWon</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="633869722990310">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="684445739536165" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="939957763197139" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="268695888930739" type="Wires">
+                            <param id="0" name="Opacity">3</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="915673568269010" type="SnappedWire">
+                            <param id="0" name="Opacity">3</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="576883867761243" type="GameWonText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="633482511999493" type="Audio">
+                            <param id="0" name="Audio file">win1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="723587680756177">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="638183354673200" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="449348678482799" type="System">
+                    <param id="0" name="Variable">GameWon</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>Check win condition</comment>
+                <event-block sid="381452968597286">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="544678267203437" type="System">
+                            <param id="0" name="Variable">SnappedWires</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">SnappableWires</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="497521191132240">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="426451112925062" type="System">
+                                    <param id="0" name="Variable">SnappableWires</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="619000680929593">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="292564109347484" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="154153801931707" type="System">
+                                    <param id="0" name="Variable">GameWon</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>If an image is touched, stop whatever sound is playing and start the sound corresponding to the image</comment>
+                <event-block sid="124578280911922">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="924534632003230" type="Mouse">
+                            <param id="0" name="Object">Wires</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="223177315989787" type="Wires" />
+                        <condition id="-6" name="Every X seconds" sid="176696179339631" type="System">
+                            <param id="0" name="Interval (seconds)">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Stop" sid="385751128852345" type="Audio">
+                            <param id="0" name="Tag">&quot;&quot;</param>
+                        </action>
+                        <action id="7" name="Play (by name)" sid="424282266451727" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">TokenAt(SoundFileList, Wires.Position + (PageNumber * Wires.Count), &quot;|&quot;)</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="165015204483958">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="163190428950122" type="Wires">
+                                    <param id="0" name="Instance variable">snappable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="443831023428174" type="Audio">
+                                    <param id="0" name="Audio file">electric1</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Go back to StartScreen</comment>
+                <event-block sid="741831796407124">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="173123575697913" type="Touch">
+                            <param id="0" name="Object">HomeIcon</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="584094680228030" type="HomeIcon" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="457062493102036" type="System">
                             <param id="0" name="Variable">PageNumber</param>
-                            <param id="1" name="Comparison">3</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="477284928082157" type="System">
+                            <param id="0" name="Layout">StartScreen</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Play bomb sounds</comment>
+                <event-block sid="711463793300153">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="572598908676718" type="System">
+                            <param id="0" name="Interval (seconds)">BeepFrequency</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="264679509738645" type="System">
+                            <param id="0" name="Variable">BeepFrequency</param>
+                            <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-15" name="Set visible" sid="646192097543393" type="PreviousIcon">
-                            <param id="0" name="Visibility">0</param>
+                        <action id="0" name="Play" sid="854938483314301" type="Audio">
+                            <param id="0" name="Audio file">bomb-beep</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="185865706371108" type="System">
+                            <param id="0" name="Variable">BeepFrequency</param>
+                            <param id="1" name="Value">BeepFrequencyDec</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="782764393686121">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <event-block sid="213241615058221">
+                <event-block sid="234909454282484">
                     <conditions>
-                        <condition id="-22" name="Else" sid="792974700368456" type="System" />
+                        <condition id="-14" name="Compare variable" sid="624425913576964" type="System">
+                            <param id="0" name="Variable">BeepFrequency</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="114179480252391" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-15" name="Set visible" sid="784957595822370" type="PreviousIcon">
-                            <param id="0" name="Visibility">1</param>
+                        <action id="-9" name="Set value" sid="105315593554903" type="System">
+                            <param id="0" name="Variable">GameOver</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
-                <comment>Show/hide the next button appropriately</comment>
-                <event-block sid="264434056269589">
+                <comment>Mouse state</comment>
+                <event-block sid="687711325278256">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="155052946319317" type="System">
-                            <param id="0" name="Variable">PageNumber</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">ceil(Image.AnimationFrameCount / Image.Count) - 1</param>
+                        <condition id="7" name="Cursor is over object" sid="376635146848661" type="Mouse">
+                            <param id="0" name="Object">TiledBackground</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-15" name="Set visible" sid="478815474673710" type="NextIcon">
-                            <param id="0" name="Visibility">0</param>
+                        <action id="0" name="Set cursor style" sid="935423671138906" type="Mouse">
+                            <param id="0" name="Cursor style">0</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="897490222084122">
+                <event-block sid="551234746124086">
                     <conditions>
-                        <condition id="-22" name="Else" sid="588920051529230" type="System" />
+                        <condition id="7" name="Cursor is over object" sid="632286419924804" type="Mouse">
+                            <param id="0" name="Object">HomeIcon</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="-15" name="Set visible" sid="944842358465216" type="NextIcon">
-                            <param id="0" name="Visibility">1</param>
+                        <action id="0" name="Set cursor style" sid="527914632673129" type="Mouse">
+                            <param id="0" name="Cursor style">1</param>
                         </action>
                     </actions>
                 </event-block>
-            </sub-events>
-        </event-block>
-        <comment>Play bomb sounds</comment>
-        <event-block sid="717545674253761">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="740238697713096" type="System">
-                    <param id="0" name="Interval (seconds)">BeepFrequency</param>
-                </condition>
-                <condition id="-14" name="Compare variable" sid="145623680963814" type="System">
-                    <param id="0" name="Variable">BeepFrequency</param>
-                    <param id="1" name="Comparison">4</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Play" sid="857100896962869" type="Audio">
-                    <param id="0" name="Audio file">bomb-beep</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                </action>
-                <action id="-11" name="Subtract from" sid="940046021898214" type="System">
-                    <param id="0" name="Variable">BeepFrequency</param>
-                    <param id="1" name="Value">BEEPFREQUENCYDEC</param>
-                </action>
-            </actions>
-            <sub-events>
-                <event-block sid="672491744136193">
-                    <conditions />
-                    <actions />
+                <event-block sid="115591061880794">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="598426550156755" type="Mouse">
+                            <param id="0" name="Object">Wires</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set cursor style" sid="752368843777923" type="Mouse">
+                            <param id="0" name="Cursor style">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="464264842928400">
+                            <conditions>
+                                <condition id="0" name="On click" sid="672659167211440" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="147242387535627" type="Wires">
+                                    <param id="0" name="Instance variable">snappable</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="452084793798209" type="Wires">
+                                    <param id="0" name="Object">SnappedWire</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="702642304969971" type="System">
+                                    <param id="0" name="Variable">SnappedWires</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="918688542604569" type="Wires">
+                                    <param id="0" name="Instance variable">snappable</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="255884112775630" type="Audio">
+                                    <param id="0" name="Audio file">cut1</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
-        </event-block>
-        <event-block sid="764096630014238">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="197010715880565" type="System">
-                    <param id="0" name="Variable">BeepFrequency</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-                <condition id="-4" name="Trigger once while true" sid="618900761779854" type="System" />
-            </conditions>
-            <actions>
-                <action id="-16" name="Wait" sid="147102871329868" type="System">
-                    <param id="0" name="Seconds">1.0</param>
-                </action>
-                <action id="0" name="Play" sid="138254611933150" type="Audio">
-                    <param id="0" name="Audio file">bomb-explode</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <comment>Mouse state</comment>
-        <event-block sid="722321883496284">
-            <conditions>
-                <condition id="7" name="Cursor is over object" sid="956936789930104" type="Mouse">
-                    <param id="0" name="Object">TiledBackground</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Set cursor style" sid="841042921122523" type="Mouse">
-                    <param id="0" name="Cursor style">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="124303875569626">
-            <conditions>
-                <condition id="7" name="Cursor is over object" sid="848710850456491" type="Mouse">
-                    <param id="0" name="Object">HomeIcon</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Set cursor style" sid="332023480534663" type="Mouse">
-                    <param id="0" name="Cursor style">1</param>
-                </action>
-            </actions>
         </event-block>
     </events>
 </c2eventsheet>
