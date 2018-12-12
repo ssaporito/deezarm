@@ -10,11 +10,11 @@
             </conditions>
             <actions>
                 <action id="-9" name="Set value" sid="493401743095758" type="System">
-                    <param id="0" name="Variable">BeepFrequency</param>
+                    <param id="0" name="Variable">BeepPeriod</param>
                     <param id="1" name="Value">10</param>
                 </action>
-                <action id="-9" name="Set value" sid="688138432655272" type="System">
-                    <param id="0" name="Variable">BeepFrequencyDec</param>
+                <action disabled="1" id="-9" name="Set value" sid="688138432655272" type="System">
+                    <param id="0" name="Variable">BeepPeriodDec</param>
                     <param id="1" name="Value">0.3</param>
                 </action>
             </actions>
@@ -31,14 +31,13 @@
             <sub-events>
                 <event-block sid="507596469515752">
                     <conditions>
-                        <condition id="0" name="On click" sid="910005538313295" type="Mouse">
-                            <param id="0" name="Mouse button">0</param>
-                            <param id="1" name="Click type">0</param>
-                        </condition>
+                        <condition id="1" name="On any key pressed" sid="910005538313295" type="Keyboard" />
                     </conditions>
                     <actions>
                         <action id="-21" name="Reset global variables" sid="571527439954014" type="System" />
-                        <action id="-26" name="Restart layout" sid="470856732837946" type="System" />
+                        <action id="-43" name="Go to next/previous layout" sid="203800837966799" type="System">
+                            <param id="0" name="Which">0</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>

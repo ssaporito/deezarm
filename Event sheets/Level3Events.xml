@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>Level1Events</name>
+    <name>Level3Events</name>
     <events>
         <include>SoundBoardEvents</include>
-        <event-block sid="295772175121898">
+        <event-block sid="358373251285147">
             <conditions>
-                <condition id="-2" name="On start of layout" sid="685314813311985" type="System" />
+                <condition id="-2" name="On start of layout" sid="456751696059165" type="System" />
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="941457597819545" type="System">
+                <action id="-9" name="Set value" sid="309141029994884" type="System">
                     <param id="0" name="Variable">BeepPeriod</param>
-                    <param id="1" name="Value">10</param>
+                    <param id="1" name="Value">5</param>
                 </action>
-                <action disabled="1" id="-9" name="Set value" sid="666570859757525" type="System">
+                <action disabled="1" id="-9" name="Set value" sid="977921572234823" type="System">
                     <param id="0" name="Variable">BeepPeriodDec</param>
                     <param id="1" name="Value">0.2</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="936857014799747">
+        <event-block sid="818052228961372">
             <conditions>
-                <condition id="-14" name="Compare variable" sid="751045446347146" type="System">
+                <condition id="-14" name="Compare variable" sid="346302113187477" type="System">
                     <param id="0" name="Variable">GameWon</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">1</param>
@@ -29,15 +29,13 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="364879329570432">
+                <event-block sid="214560780357378">
                     <conditions>
-                        <condition id="1" name="On any key pressed" sid="491065376275556" type="Keyboard" />
+                        <condition id="1" name="On any key pressed" sid="974877939957649" type="Keyboard" />
                     </conditions>
                     <actions>
-                        <action id="-21" name="Reset global variables" sid="261646197819408" type="System" />
-                        <action id="-43" name="Go to next/previous layout" sid="354633501186215" type="System">
-                            <param id="0" name="Which">0</param>
-                        </action>
+                        <action id="-21" name="Reset global variables" sid="728262420745924" type="System" />
+                        <action id="-26" name="Restart layout" sid="668773422986632" type="System" />
                     </actions>
                 </event-block>
             </sub-events>

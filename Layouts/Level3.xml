@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>Level2</name>
-    <sid>207757832439056</sid>
-    <event-sheet>Level2Events</event-sheet>
+    <name>Level3</name>
+    <sid>872289368827993</sid>
+    <event-sheet>Level3Events</event-sheet>
     <size>
         <width>1366</width>
         <height>768</height>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="BackgroundLayer" sid="562008885116695">
+        <layer name="BackgroundLayer" sid="732789231035451">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>0</transparent>
@@ -29,7 +29,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="TiledBackground" uid="37">
+                <instance type="TiledBackground" uid="14">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
@@ -52,7 +52,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="GameLayer" sid="640551826353766">
+        <layer name="GameLayer" sid="706853207764304">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
@@ -68,7 +68,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="GameDirectionsText" uid="39">
+                <instance type="GameDirectionsText" uid="15">
                     <properties>
                         <text>&lt;Set via GameDirections variable in CustomizeGameHere&gt;</text>
                         <initial-visibility>Invisible</initial-visibility>
@@ -95,7 +95,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="GameTitleText" uid="41">
+                <instance type="GameTitleText" uid="19">
                     <properties>
                         <text>&lt;GameTitle&gt;</text>
                         <initial-visibility>Invisible</initial-visibility>
@@ -122,7 +122,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="HomeIcon" uid="44">
+                <instance type="HomeIcon" uid="26">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -144,7 +144,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Wires" uid="53">
+                <instance type="Wires" uid="40">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -159,8 +159,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>136</x>
-                        <y>379</y>
+                        <x>637</x>
+                        <y>55</y>
                         <z>0</z>
                         <width>64</width>
                         <height>60</height>
@@ -171,7 +171,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Wires" uid="54">
+                <instance type="Wires" uid="42">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -186,11 +186,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1225</x>
-                        <y>358</y>
+                        <x>194</x>
+                        <y>413</y>
                         <z>0</z>
                         <width>64</width>
-                        <height>60</height>
+                        <height>555</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -198,7 +198,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Wires" uid="38">
+                <instance type="Wires" uid="50">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -213,10 +213,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>574.5</x>
-                        <y>379.5</y>
+                        <x>420</x>
+                        <y>380</y>
                         <z>0</z>
-                        <width>812</width>
+                        <width>389</width>
                         <height>53</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -225,7 +225,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Wires" uid="48">
+                <instance type="Wires" uid="51">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -240,37 +240,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>265</x>
-                        <y>234</y>
+                        <x>636.000061035</x>
+                        <y>373</y>
                         <z>0</z>
-                        <width>257</width>
-                        <height>53</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>-1.57079649</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Wires" uid="47">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>1</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <position>0</position>
-                        <snappable>false</snappable>
-                        <isOrigin>false</isOrigin>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>265</x>
-                        <y>529.5</y>
-                        <z>0</z>
-                        <width>252</width>
+                        <width>571</width>
                         <height>53</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -279,7 +252,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Wires" uid="59">
+                <instance type="Wires" uid="60">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -294,11 +267,38 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>553</x>
-                        <y>252.5</y>
+                        <x>418</x>
+                        <y>252</y>
                         <z>0</z>
                         <width>52</width>
-                        <height>204</height>
+                        <height>384</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>1.570796371</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Wires" uid="31">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>3</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <position>3</position>
+                        <snappable>false</snappable>
+                        <isOrigin>false</isOrigin>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1076</x>
+                        <y>409</y>
+                        <z>0</z>
+                        <width>64</width>
+                        <height>555</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -306,7 +306,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Wires" uid="65">
+                <instance type="Wires" uid="33">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -321,11 +321,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>659</x>
-                        <y>505</y>
+                        <x>429</x>
+                        <y>473</y>
                         <z>0</z>
                         <width>52</width>
-                        <height>198</height>
+                        <height>134</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -333,34 +333,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Wires" uid="66">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <position>0</position>
-                        <snappable>true</snappable>
-                        <isOrigin>false</isOrigin>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>786</x>
-                        <y>254.5</y>
-                        <z>0</z>
-                        <width>52</width>
-                        <height>203</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Wires" uid="45">
+                <instance type="Wires" uid="56">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -375,10 +348,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>608</x>
-                        <y>127</y>
+                        <x>341.5</x>
+                        <y>564</y>
                         <z>0</z>
-                        <width>740</width>
+                        <width>230</width>
                         <height>53</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -387,7 +360,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Wires" uid="46">
+                <instance type="Wires" uid="43">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -402,10 +375,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>609</x>
-                        <y>629</y>
+                        <x>806.5</x>
+                        <y>492</y>
                         <z>0</z>
-                        <width>740</width>
+                        <width>294</width>
                         <height>53</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -414,7 +387,34 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Wires" uid="49">
+                <instance type="Wires" uid="52">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <position>0</position>
+                        <snappable>true</snappable>
+                        <isOrigin>false</isOrigin>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>927</x>
+                        <y>399</y>
+                        <z>0</z>
+                        <width>52</width>
+                        <height>134</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Wires" uid="57">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -429,10 +429,64 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>999</x>
-                        <y>378</y>
+                        <x>904.5</x>
+                        <y>307</y>
                         <z>0</z>
-                        <width>552</width>
+                        <width>275</width>
+                        <height>53</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Wires" uid="67">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <position>0</position>
+                        <snappable>true</snappable>
+                        <isOrigin>false</isOrigin>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>850.5</x>
+                        <y>636</y>
+                        <z>0</z>
+                        <width>383</width>
+                        <height>44</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Wires" uid="68">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>1</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <position>0</position>
+                        <snappable>false</snappable>
+                        <isOrigin>false</isOrigin>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>793</x>
+                        <y>208.5</y>
+                        <z>0</z>
+                        <width>148</width>
                         <height>53</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -441,34 +495,34 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Wires" uid="55">
+                <instance type="Wires" uid="74">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
-                        <initial-frame>1</initial-frame>
+                        <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
                         <position>0</position>
-                        <snappable>false</snappable>
+                        <snappable>true</snappable>
                         <isOrigin>false</isOrigin>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1106</x>
-                        <y>357</y>
+                        <x>931.5</x>
+                        <y>162</y>
                         <z>0</z>
-                        <width>174</width>
-                        <height>41</height>
+                        <width>52</width>
+                        <height>224</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
+                        <angle>1.570796371</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Position" uid="16">
+                <instance type="Position" uid="69">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -478,8 +532,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>140</x>
-                        <y>377</y>
+                        <x>641</x>
+                        <y>53</y>
                         <z>0</z>
                         <width>16</width>
                         <height>16</height>
@@ -493,7 +547,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="Feedback" sid="888939907990515">
+        <layer name="Feedback" sid="140664908151181">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
@@ -509,7 +563,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="GameOverText" uid="61">
+                <instance type="GameOverText" uid="70">
                     <properties>
                         <text>The bomb exploded! Press any key to try again.</text>
                         <initial-visibility>Invisible</initial-visibility>
@@ -536,7 +590,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="GameOverText" uid="62">
+                <instance type="GameOverText" uid="71">
                     <properties>
                         <text>The bomb exploded! Press any key to try again.</text>
                         <initial-visibility>Invisible</initial-visibility>
@@ -563,7 +617,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="GameWonText" uid="63">
+                <instance type="GameWonText" uid="72">
                     <properties>
                         <text>You have defused the bomb! Press any key to continue.</text>
                         <initial-visibility>Invisible</initial-visibility>
@@ -593,7 +647,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="Holder" sid="821371411414750">
+        <layer name="Holder" sid="597926859639802">
             <initially-visible>0</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
@@ -609,7 +663,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="SnappedWire" uid="64">
+                <instance type="SnappedWire" uid="73">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -619,8 +673,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1128</x>
-                        <y>174</y>
+                        <x>1115</x>
+                        <y>67</y>
                         <z>0</z>
                         <width>71</width>
                         <height>59</height>

@@ -29,8 +29,10 @@
                 <comment>When the StartIcon is touched or clicked, go to the main screen.</comment>
                 <event-block any="1" sid="526665325839358">
                     <conditions>
-                        <condition id="3" name="On touched object" sid="378515238007246" type="Touch">
-                            <param id="0" name="Object">StartIcon</param>
+                        <condition id="6" name="On object clicked" sid="973327342798940" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">StartIcon</param>
                         </condition>
                     </conditions>
                     <actions>
