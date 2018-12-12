@@ -522,7 +522,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Position" uid="69">
+                <instance type="Player" uid="69">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -619,7 +619,7 @@
                 </instance>
                 <instance type="GameWonText" uid="72">
                     <properties>
-                        <text>You have defused the bomb! Press any key to continue.</text>
+                        <text>You have defused the bomb! This is currently the last level. Press any key to restart.</text>
                         <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-96,400,0</font>
                         <color>0,0,0</color>

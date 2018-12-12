@@ -35,7 +35,9 @@
                     </conditions>
                     <actions>
                         <action id="-21" name="Reset global variables" sid="728262420745924" type="System" />
-                        <action id="-26" name="Restart layout" sid="668773422986632" type="System" />
+                        <action id="-2" name="Go to layout" sid="668773422986632" type="System">
+                            <param id="0" name="Layout">Level1</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>

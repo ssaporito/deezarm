@@ -12,6 +12,8 @@
         <variable constant="0" name="SnappedWires" sid="908645954865175" static="0" type="number">0</variable>
         <variable constant="0" name="SnappableWires" sid="914403058616904" static="0" type="number">0</variable>
         <variable constant="0" name="PlayerSpeed" sid="129448845924544" static="0" type="number">7</variable>
+        <variable constant="0" name="PreviousPlayerX" sid="743461248464881" static="0" type="number">0</variable>
+        <variable constant="0" name="PreviousPlayerY" sid="640420477157076" static="0" type="number">0</variable>
         <variable comment="current page number (zero-based)" constant="0" name="PageNumber" sid="188747974456220" static="0" type="number">0</variable>
         <include>CustomizeGameHere</include>
         <comment>Initialize layout</comment>
@@ -235,7 +237,7 @@
                         <comment>If an image is touched, stop whatever sound is playing and start the sound corresponding to the image</comment>
                         <event-block sid="124578280911922">
                             <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="924534632003230" type="Position">
+                                <condition id="1" name="Is overlapping another object" sid="924534632003230" type="Player">
                                     <param id="0" name="Object">Wires</param>
                                 </condition>
                                 <condition id="-9" name="Is visible" sid="223177315989787" type="Wires" />
@@ -284,6 +286,12 @@
                                                 <condition id="-22" name="Else" sid="671305663802701" type="System" />
                                             </conditions>
                                             <actions>
+                                                <action id="0" name="Play" sid="766269146794052" type="Audio">
+                                                    <param id="0" name="Audio file">cut1</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
                                                 <action id="0" name="Play" sid="393654108540581" type="Audio">
                                                     <param id="0" name="Audio file">electric1</param>
                                                     <param id="2" name="Loop">0</param>
@@ -446,53 +454,97 @@
         </event-group>
         <event-group description="" sid="296233488079377" title="Movement">
             <sub-events>
-                <event-block sid="305104119133061">
+                <event-block sid="685361483571853">
                     <conditions>
-                        <condition id="2" name="Key is down" sid="143201385226115" type="Keyboard">
-                            <param id="0" name="Key">37</param>
-                        </condition>
+                        <condition id="-3" name="Is on-screen" sid="209977944599865" type="Player" />
                     </conditions>
                     <actions>
-                        <action id="-1" name="Set X" sid="974707612143239" type="Position">
-                            <param id="0" name="X">Position.X-PlayerSpeed</param>
+                        <action id="-9" name="Set value" sid="480743257677486" type="System">
+                            <param id="0" name="Variable">PreviousPlayerX</param>
+                            <param id="1" name="Value">Player.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="406199725187948" type="System">
+                            <param id="0" name="Variable">PreviousPlayerY</param>
+                            <param id="1" name="Value">Player.Y</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="305104119133061">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="143201385226115" type="Keyboard">
+                                    <param id="0" name="Key">37</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="974707612143239" type="Player">
+                                    <param id="0" name="X">Player.X-PlayerSpeed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="175336986230965">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="396085650844575" type="Keyboard">
+                                    <param id="0" name="Key">38</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="588901561644213" type="Player">
+                                    <param id="0" name="Y">Player.Y-PlayerSpeed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="610145039445119">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="506436614688191" type="Keyboard">
+                                    <param id="0" name="Key">39</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="975864212129193" type="Player">
+                                    <param id="0" name="X">Player.X+PlayerSpeed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="251599156140129">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="625976783795350" type="Keyboard">
+                                    <param id="0" name="Key">40</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="535044967630607" type="Player">
+                                    <param id="0" name="Y">Player.Y+PlayerSpeed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <event-block sid="175336986230965">
+                <event-block sid="353210983955990">
                     <conditions>
-                        <condition id="2" name="Key is down" sid="396085650844575" type="Keyboard">
-                            <param id="0" name="Key">38</param>
-                        </condition>
+                        <condition id="-22" name="Else" sid="563400666690406" type="System" />
                     </conditions>
-                    <actions>
-                        <action id="-2" name="Set Y" sid="588901561644213" type="Position">
-                            <param id="0" name="Y">Position.Y-PlayerSpeed</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="610145039445119">
-                    <conditions>
-                        <condition id="2" name="Key is down" sid="506436614688191" type="Keyboard">
-                            <param id="0" name="Key">39</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-1" name="Set X" sid="975864212129193" type="Position">
-                            <param id="0" name="X">Position.X+PlayerSpeed</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="251599156140129">
-                    <conditions>
-                        <condition id="2" name="Key is down" sid="625976783795350" type="Keyboard">
-                            <param id="0" name="Key">40</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-2" name="Set Y" sid="535044967630607" type="Position">
-                            <param id="0" name="Y">Position.Y+PlayerSpeed</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="773328535187865">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="246497603776154" type="System">
+                                    <param id="0" name="Interval (seconds)">0.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="872568858215030" type="Player">
+                                    <param id="0" name="X">Player.X-3*(Player.X - PreviousPlayerX)</param>
+                                    <param id="1" name="Y">Player.Y-3*(Player.Y - PreviousPlayerY)</param>
+                                </action>
+                                <action id="0" name="Play" sid="631772648906897" type="Audio">
+                                    <param id="0" name="Audio file">wall1</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">10</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
